@@ -1,0 +1,298 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom left, #ADD8E6, #FF6347);
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, black, gray);
+    color: white;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    margin-top: auto; /* Push footer to the bottom */
+    position:relative;
+}
+
+
+
+
+/* Default hidden state for the navigation list */
+.hidden {
+    display: none;
+}
+
+/* Visible state for the navigation list */
+#nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    text-align: center;
+}
+
+#nav-list li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+#nav-list li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Style the toggle button */
+#menu-toggle {
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, black, gray);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav li {
+    margin: 0 15px;
+}
+
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Hamburger menu */
+    #menu-toggle {
+        display: block;
+    }
+
+    .site-nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background: #333;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .site-nav ul li {
+        margin: 10px 0;
+    }
+
+    .site-nav ul:not(.hidden) {
+        display: flex;
+    }
+
+    /* Portfolio Item Layout: Stack images/videos above description */
+    .portfolio-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjust video size for mobile */
+    .portfolio-video, .portfolio-image img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .about-grid-desktop {
+        display: none; /* Hide desktop grid */
+    }
+
+    .about-grid-mobile {
+        display: grid; /* Show mobile grid */
+        grid-template-columns: 1;
+        grid-template-rows: 3; /* Vertical layout */
+        gap: 20px;
+    }
+
+}
+
+/* Portfolio Layout */
+.portfolio-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.portfolio-video {
+    max-width: 60%;  /* Limit the width of the video */
+    height: auto;    /* Maintain aspect ratio */
+    margin-right: 20px;
+    border: 2px solid #ccc; 
+}
+
+.portfolio-image img {
+    width: 100%; /* Adjusts the image to 50% of its container */
+    max-width: 500px; /* Ensures the image doesn't exceed 500px in width */
+    height: auto;
+    border: 2px solid #ccc;
+    margin-right: 20px;
+}
+
+
+.portfolio-description {
+    flex: 2;
+}
+
+.portfolio-description h2 {
+    margin: 0 0 10px;
+}
+
+.portfolio-description p {
+    margin: 0;
+}
+
+/* Centering Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1; /* This ensures main content expands and pushes footer down */
+
+}
+
+/* Ensuring video is not too large */
+#project-video {
+    max-width: 100%; /* Make sure video doesn't grow too large */
+    width: 600px;  /* Set a specific width */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+#about {
+    padding: 20px;
+}
+
+/* Default: Hide Mobile Grid, Show Desktop Grid */
+.about-grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Horizontal layout */
+    gap: 20px;
+}
+
+.about-grid-mobile {
+    display: none; /* Hidden by default */
+}
+
+.about-column {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-column h2 {
+    margin-top: 0;
+}
+
+.about-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-column ul li {
+    margin-bottom: 10px;
+}
+
+
+
+/* Contact Section */
+#contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Label and Input/textarea styling */
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+/* Submit Button Styling */
+#contact-form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%; /* Make the button span the full width */
+}
+
+#contact-form button:hover {
+    background-color: #555;
+}
+
+/* Feedback Message */
+#feedback {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    display: none; /* Hide feedback by default */
+}
+
+.hidden {
+    display: none;
+}
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Mason Montgomery, 12/04/2024 -->
+<html lang="en">
+
+<head>
+    <title>Contact Us - My Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <h1 class="site-title">My Website</h1>
+        <nav class="site-nav">
+            <ul id="nav-list" class="hidden">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us using the form below!</p>
+            
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>            
+            
+            <div id="feedback" class="hidden">
+                <p>Thank you for your message! We'll get back to you soon.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2024 Mason Montgomery. All rights reserved.</p>
+    </footer>
+
+    <script src="Scripts/script.js" defer></script>
+</body>
+
+</html>
+
